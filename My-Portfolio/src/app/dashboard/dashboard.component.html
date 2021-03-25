@@ -1,0 +1,27 @@
+<div>
+    <h2>My Portfolio (Dashboad) Page </h2>
+    <form #userRef="ngForm" (ngSubmit)="saveContact(userRef.value)">
+        <label>Contact Name:</label>
+        <input type="text" name="user" ngModel/> <br/>
+        <label>Contact Phone:</label>
+        <input type="text" name="phone" ngModel/> <br/>
+        <input type="submit" value="submit"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <br/>
+    <table >
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+        </tr>
+        <tr *ngFor="let user of contacts">
+            <td>{{user.name}}</td>
+            <td>{{user.pass}}</td>
+        </tr>
+    </table>
+
+    <br/>
+    <p>Are you done? Follow the link to Logout: 
+     <input type="button" value="Logout" (click)="logout()">
+    </p>
+</div>
